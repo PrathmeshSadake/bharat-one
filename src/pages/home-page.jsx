@@ -15,7 +15,7 @@ const HomePage = () => {
   }
 
   return (
-    <div className='mx-auto max-w-7xl py-24'>
+    <div className='mx-auto max-w-7xl'>
       <p>
         {error && <strong>Error: {JSON.stringify(error)}</strong>}
         {loading && <span>Collection: Loading...</span>}

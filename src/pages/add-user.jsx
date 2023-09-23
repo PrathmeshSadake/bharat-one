@@ -47,9 +47,12 @@ const AddUserPage = () => {
     }
   };
   return (
-    <div className='mx-auto max-w-7xl py-24 min-h-screen w-full'>
+    <div className='mx-auto max-w-7xl'>
       <div className='w-full mx-auto max-w-md'>
         <form className='bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4'>
+          <h1 className='block text-center text-gray-700 text-sm font-bold mb-4'>
+            Add User Details
+          </h1>
           <div className='mb-4'>
             <label className='block text-gray-700 text-sm font-bold mb-2'>
               Name
