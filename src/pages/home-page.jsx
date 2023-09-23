@@ -1,6 +1,7 @@
 import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import { db } from "../lib/firebase";
 import { collection } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [values, loading, error] = useCollectionDataOnce(
@@ -39,6 +40,9 @@ const HomePage = () => {
                 <th scope='col' className='px-6 py-3'>
                   City
                 </th>
+                <th scope='col' className='px-6 py-3'>
+                  Edit
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -55,6 +59,24 @@ const HomePage = () => {
                     <td className='px-6 py-4'> {user.age}</td>
                     <td className='px-6 py-4'> {user.gender}</td>
                     <td className='px-6 py-4'> {user.city}</td>
+                    <td className='px-6 py-4'>
+                      <Link to={`/edit-user/${user.id}`}>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          fill='none'
+                          viewBox='0 0 24 24'
+                          strokeWidth={1.5}
+                          stroke='currentColor'
+                          className='w-6 h-6'
+                        >
+                          <path
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            d='M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125'
+                          />
+                        </svg>
+                      </Link>
+                    </td>
                   </tr>
                 );
               })}
